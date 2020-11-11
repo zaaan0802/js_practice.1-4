@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 課題①-4</title>
+</head>
+
+<body>
+  <script>
+    var cleaning = {
+      content: "机を片付ける",
+      genre: "掃除"
+    }
+    var shopping = {
+      content: "牛乳を買う",
+      genre: "買い物"
+    }
+    var exercise = {
+      content: "散歩する",
+      genre: "運動"
+    }
+
+    var tasks = [cleaning, shopping, exercise];
+
+    function allList() {
+      top.console.log('=======================');
+      top.console.log('現在持っているタスクの一覧');
+      top.console.log('=======================');
+    };
+
+    allList();
+    tasks.forEach(function (toDos) {
+      var number = tasks.indexOf(toDos);
+      console.log(number + 1 + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
+      // 0スタートが気持ち悪いので1スタートにした
+      //同じ関数を30-33で使用するのでシンプルにしたいがやり方がわからない...
+    });
+
+    var newTask = {};
+    var addTask = window.prompt('タスクを入力してください')
+    newTask.content = addTask;
+    var addGenre = window.prompt('ジャンルを入力してください')
+    newTask.genre = addGenre;
+    tasks.push(newTask);
+    alert('新しいタスクを追加しました。');
+
+    allList();
+
+    tasks.forEach(function (toDos) {
+      var presets = tasks.indexOf(toDos);
+      console.log(presets + 1 + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
+    });
+
+    prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください。');
+
+
+    // 試行錯誤を残しておく↓
+    // var result1 = tasks.indexOf('掃除')
+    // var result2 = tasks.indexOf('買い物')
+    // var result3 = tasks.indexOf('散歩')
+
+    // console.log(result1 + ' : ' + tasks[0]);
+    // console.log(result2 + ' : ' + tasks[1]);
+    // console.log(result3 + ' : ' + tasks[2]);
+
+    // console.log('=======================');
+    // console.log('現在持っているタスクの一覧');
+    // console.log('=======================');
+    // console.log(result1 + ' : ' + tasks[0]);
+    // console.log(result2 + ' : ' + tasks[1]);
+    // console.log(result3 + ' : ' + tasks[2]);
+    // console.log(tasks[3]);
+
+    // function addTask () {
+    //   // return newTask.length <= 1
+    // }
+
+    // function taskAdd() {
+    // return;
+    // }
+
+    // tasks.push('ああ');
+    // var result4 = tasks.indexOf('ああ');
+    // console.log('=======================');
+    // console.log('現在持っているタスクの一覧');
+    // console.log('=======================');
+    // console.log(result1 + ' : ' + tasks[0]);
+    // console.log(result2 + ' : ' + tasks[1]);
+    // console.log(result3 + ' : ' + tasks[2]);
+    // console.log(result4 + ' : ' + tasks[3]);
+
+  </script>
+</body>
+
+</html>
