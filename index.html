@@ -8,48 +8,41 @@
 
 <body>
   <script>
-    var cleaning = {
+    const cleaning = {
       content: "机を片付ける",
       genre: "掃除"
     }
-    var shopping = {
+    const shopping = {
       content: "牛乳を買う",
       genre: "買い物"
     }
-    var exercise = {
+    const exercise = {
       content: "散歩する",
       genre: "運動"
     }
 
-    var tasks = [cleaning, shopping, exercise];
+    const tasks = [cleaning, shopping, exercise];
 
     function printTaskHeader() {
       top.console.log('=======================');
       top.console.log('現在持っているタスクの一覧');
       top.console.log('=======================');
+      tasks.forEach(function (toDos, number) {
+        console.log(number + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
+      });
     };
 
     printTaskHeader();
-    tasks.forEach(function (toDos) {
-      var number = tasks.indexOf(toDos);
-      console.log(number + 1 + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
-      // 0スタートが気持ち悪いので1スタートにした
-    });
 
-    var newTask = {};
-    var addTask = window.prompt('タスクを入力してください')
+    const newTask = {};
+    const addTask = window.prompt('タスクを入力してください')
     newTask.content = addTask;
-    var addGenre = window.prompt('ジャンルを入力してください')
+    const addGenre = window.prompt('ジャンルを入力してください')
     newTask.genre = addGenre;
     tasks.push(newTask);
     alert('新しいタスクを追加しました。');
 
     printTaskHeader();
-
-    tasks.forEach(function (toDos) {
-      var presets = tasks.indexOf(toDos);
-      console.log(presets + 1 + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
-    });
 
     prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください。');
 
