@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 課題①-4</title>
+</head>
+
+<body>
+  <script>
+    const cleaning = {
+      content: "机を片付ける",
+      genre: "掃除"
+    }
+    const shopping = {
+      content: "牛乳を買う",
+      genre: "買い物"
+    }
+    const exercise = {
+      content: "散歩する",
+      genre: "運動"
+    }
+
+    const tasks = [cleaning, shopping, exercise];
+
+    function printTaskHeader() {
+      top.console.log('=======================');
+      top.console.log('現在持っているタスクの一覧');
+      top.console.log('=======================');
+      tasks.forEach(function (toDos, number) {
+        console.log(number + ' : ' + '[内容]' + toDos.content + '、[ジャンル]' + toDos.genre);
+      });
+    };
+
+    printTaskHeader();
+
+    const newTask = {};
+    const addTask = window.prompt('タスクを入力してください')
+    newTask.content = addTask;
+    const addGenre = window.prompt('ジャンルを入力してください')
+    newTask.genre = addGenre;
+    tasks.push(newTask);
+    alert('新しいタスクを追加しました。');
+
+    printTaskHeader();
+
+    prompt('「確認,追加,削除,終了」の4つのいずれかを入力してください。');
+
+  </script>
+</body>
+
+</html>
